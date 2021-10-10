@@ -1,6 +1,97 @@
+
+/* css reset to make all browsers the same - this must stay on top of everything*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 1rem;
+    font: inherit;
+    vertical-align: baseline;
+}
+    @font-face {
+        font-family: 'Atkinson-Hyperlegible-Regular-102a';
+        src: url('Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2');
+    }
+
 :root {
+    /* Use HSLA values for color, the H and S values are in the -base color */
+    --primary-h: 237; --primary-s: 63%; --primary-l: 71%;
+    --secondary-h: 78; --secondary-s: 8%; --secondary-l: 70%;
+    --accent1-h: 79; --accent1-s: 57%; --accent1-l: 95%;
+    --neutral-h: 84; --neutral-s: 14%; --neutral-l: 93%;
+    --base-h: 229; --base-s: 12%; --base-l: 17%;
+    /* informational colors */
+    --info: 187, 54.8%, 93.9%, 1;
+    --warning: 50, 80.4%, 90%, 1;
+    --error: 19, 53.2%, 90.8%, 1;
+    --success: 120, 22.6%, 93.9%, 1;
+    /* calculated values */
+    --primary: hsla( var(--primary-h), var(--primary-s), var(--primary-l), 100%);
+    --primary-dark: hsla( var(--primary-h), var(--primary-s), calc(var(--primary-l)-10%), 100%);
+    --primary-darker: hsla( var(--primary-h), var(--primary-s), calc(var(--primary-l)-20%), 100%);
+    --primary-light: hsla( var(--primary-h), var(--primary-s), calc(var(--primary-l)+10%), 100%);
+    --primary-lighter: hsla( var(--primary-h), var(--primary-s), calc(var(--primary-l)+20%), 100%);
+    --secondary: hsla( var(--secondary-h), var(--secondary-s), var(--secondary-l), 100%);
+    --secondary-dark: hsla( var(--secondary-h), var(--secondary-s), calc(var(--secondary-l)-10%), 100%);
+    --secondary-darker: hsla( var(--secondary-h), var(--secondary-s), calc(var(--secondary-l)-20%), 100%);
+    --secondary-light: hsla( var(--secondary-h), var(--secondary-s), calc(var(--secondary-l)+10%), 100%);
+    --secondary-lighter: hsla( var(--secondary-h), var(--secondary-s), calc(var(--secondary-l)+20%), 100%);
+    --accent-1: hsla( var(--accent-1-h), var(--accent-1-s), var(--accent-1-l), 100%);
+    --accent-1-dark: hsla( var(--accent-1-h), var(--accent-1-s), calc(var(--accent-1-l)-10%), 100%);
+    --accent-1-darker: hsla( var(--accent-1-h), var(--accent-1-s), calc(var(--accent-1-l)-20%), 100%);
+    --accent-1-light: hsla( var(--accent-1-h), var(--accent-1-s), calc(var(--accent-1-l)+10%), 100%);
+    --accent-1-lighter: hsla( var(--accent-1-h), var(--accent-1-s), calc(var(--accent-1-l)+20%), 100%);
+    --neutral: hsla( var(--neutral-h), var(--neutral-s), var(--neutral-l), 100%);
+    --neutral-dark: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)-10%), 100%);
+    --neutral-darker: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)-20%), 100%);
+    --neutral-light: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)+10%), 100%);
+    --neutral-lighter: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)+20%), 100%);
+    --base: hsla( var(--base-h), var(--base-s), var(--base-l), 100%);
+    --base-dark: hsla( var(--base-h), var(--base-s), calc(var(--base-l)-10%), 100%);
+    --base-darker: hsla( var(--base-h), var(--base-s), calc(var(--base-l)-20%), 100%);
+    --base-light: hsla( var(--base-h), var(--base-s), calc(var(--base-l)+10%), 100%);
+    --base-lighter: hsla( var(--base-h), var(--base-s), calc(var(--base-l)+20%), 100%);
 }
 
 body {
+    line-height: 1;
+    font-family: 'Atkinson-Hyperlegible-Regular-102a';
+    display: flex;
+    flex-direction: column;
+    min-height:100vh;
+}
 
+main {
+    flex-grow:4;
+}
+
+
+/* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+    background: #000;  /*quick and dirty hack, it is better to actually define colors*/
+    filter: invert(1) hue-rotate(180deg);
+}
+/* Default or light mode colors */
+@media (prefers-color-scheme: light) {
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width:767px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width:991px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width:1199px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

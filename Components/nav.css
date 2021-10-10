@@ -1,0 +1,27 @@
+@import "../style.css";
+
+
+ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--secondary);
+    border: solid;
+}
+
+li {
+    padding: 2rem;
+}
+
+    li a {
+        text-decoration: none;
+        color: var(--base);
+    }
+
+        li a:hover {
+            background-color: var(--secondary-lighter);
+            color: var(--neutral);
+        }
