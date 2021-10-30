@@ -51,6 +51,26 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     --base-darker: hsla( var(--base-h), var(--base-s), calc(var(--base-l)-20%), 100%);
     --base-light: hsla( var(--base-h), var(--base-s), calc(var(--base-l)+10%), 100%);
     --base-lighter: hsla( var(--base-h), var(--base-s), calc(var(--base-l)+20%), 100%);
+        
+	/*Font sizing*/
+    --font-scale: 1.414;  /* Set the scale and all other sizes are calculated */
+	/*
+	1.067 - Minor Second      Smaller screens
+	1.125 - Major Second           - 
+	1.200 - Minor Third            -
+	1.250 - Major Third            -
+	1.333 - Perfect Fourth         -
+	1.414 - Augmented Fourth       -
+	1.500 - Perfect Fifth          -
+	1.618 - Golden Ratio      Bigger screens
+	*/
+    --font-size-2: calc(1rem * var(--font-scale));
+    --font-size-3: calc( var(--font-size-2) * var(--font-scale));
+    --font-size-4: calc( var(--font-size-3) * var(--font-scale));
+    --font-size-5: calc( var(--font-size-4) * var(--font-scale));
+    --font-size-6: calc( var(--font-size-5) * var(--font-scale));
+    --font-size-smaller-1: calc( 1rem / var(--font-scale));
+    --font-size-smaller-2: calc( var(--font-size-small-1) / var(--font-scale));
 }
 
 body {
