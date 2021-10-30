@@ -1,4 +1,4 @@
-## HeadingModern HTML Template
+## Modern HTML Template
 
 My Current starting template for a blank HTML project. This template uses pure HTML CSS and JavaScript. I have made a few choices that might not align with everyone's idea of a starter template but it suits me well.
 It uses web components to build the modular parts of the page and is easy to add additional components as needed. Look in script.js to find where to add additional components. Each component has it's own html/css file and can be set up however is needed for the individual site.
