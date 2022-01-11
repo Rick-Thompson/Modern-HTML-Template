@@ -1,4 +1,3 @@
-
 /* css reset to make all browsers the same - this must stay on top of everything*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
@@ -8,53 +7,102 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font: inherit;
     vertical-align: baseline;
 }
+/* If you have  no preference for fonts the listed font is a good starting point */
     @font-face {
         font-family: 'Atkinson-Hyperlegible-Regular-102a';
         src: url('Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2');
     }
 
 :root {
-    /* Use HSLA values for color, the H and S values are in the -base color */
+    /* Use HSLA values for color */
+    /* First pick your primary color for the page. This is your main color */
     --primary-h: 237; --primary-s: 63%; --primary-l: 71%;
+    /* Secondary color mignt not be used but if  your company or logo has two colors it makes a good secondary */
     --secondary-h: 78; --secondary-s: 8%; --secondary-l: 70%;
+    /* The accent colors are other colors used in the page. They are good to get from a color picker app if you don't 
+       already have colors to chose from. */
     --accent1-h: 79; --accent1-s: 57%; --accent1-l: 95%;
-    --neutral-h: 84; --neutral-s: 14%; --neutral-l: 93%;
-    --base-h: 229; --base-s: 12%; --base-l: 17%;
+    --accent2-h: 79; --accent2-s: 57%; --accent2-l: 95%;
+    --accent3-h: 79; --accent3-s: 57%; --accent3-l: 95%;
+    --accent4-h: 79; --accent4-s: 57%; --accent4-l: 95%;
+    /* the neutral colors are what you use for the text, backgrounds, and other interface parts */
+    /* grey shades, 10%(very light) to 90%(very dark) using var neutral-[1-9] */
+    --neutral-h: 0; --neutral-s: 0%; --neutral-l: 50%;
+    --background-h: 229; --background-s: 12%; --background-l: 17%;
     /* informational colors */
     --info: 187, 54.8%, 93.9%, 1;
     --warning: 50, 80.4%, 90%, 1;
     --error: 19, 53.2%, 90.8%, 1;
     --success: 120, 22.6%, 93.9%, 1;
     /* calculated values */
+    /* These can be edited and adjusted as the page is developed but they are a good starting point */
     --primary: hsla( var(--primary-h), var(--primary-s), var(--primary-l), 100%);
     --primary-dark: hsla( var(--primary-h), var(--primary-s), calc(var(--primary-l)-10%), 100%);
     --primary-darker: hsla( var(--primary-h), var(--primary-s), calc(var(--primary-l)-20%), 100%);
+    --primary-darkest: hsla( var(--primary-h), var(--primary-s), calc(var(--primary-l)-30%), 100%);
     --primary-light: hsla( var(--primary-h), var(--primary-s), calc(var(--primary-l)+10%), 100%);
     --primary-lighter: hsla( var(--primary-h), var(--primary-s), calc(var(--primary-l)+20%), 100%);
+    --primary-lightest: hsla( var(--primary-h), var(--primary-s), calc(var(--primary-l)+30%), 100%);
+
     --secondary: hsla( var(--secondary-h), var(--secondary-s), var(--secondary-l), 100%);
     --secondary-dark: hsla( var(--secondary-h), var(--secondary-s), calc(var(--secondary-l)-10%), 100%);
     --secondary-darker: hsla( var(--secondary-h), var(--secondary-s), calc(var(--secondary-l)-20%), 100%);
+    --secondary-darkest: hsla( var(--secondary-h), var(--secondary-s), calc(var(--secondary-l)-30%), 100%);
     --secondary-light: hsla( var(--secondary-h), var(--secondary-s), calc(var(--secondary-l)+10%), 100%);
     --secondary-lighter: hsla( var(--secondary-h), var(--secondary-s), calc(var(--secondary-l)+20%), 100%);
-    --accent-1: hsla( var(--accent-1-h), var(--accent-1-s), var(--accent-1-l), 100%);
-    --accent-1-dark: hsla( var(--accent-1-h), var(--accent-1-s), calc(var(--accent-1-l)-10%), 100%);
-    --accent-1-darker: hsla( var(--accent-1-h), var(--accent-1-s), calc(var(--accent-1-l)-20%), 100%);
-    --accent-1-light: hsla( var(--accent-1-h), var(--accent-1-s), calc(var(--accent-1-l)+10%), 100%);
-    --accent-1-lighter: hsla( var(--accent-1-h), var(--accent-1-s), calc(var(--accent-1-l)+20%), 100%);
-    --neutral: hsla( var(--neutral-h), var(--neutral-s), var(--neutral-l), 100%);
-    --neutral-dark: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)-10%), 100%);
-    --neutral-darker: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)-20%), 100%);
-    --neutral-light: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)+10%), 100%);
-    --neutral-lighter: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)+20%), 100%);
+    --secondary-lightest: hsla( var(--secondary-h), var(--secondary-s), calc(var(--secondary-l)+0%), 100%);
+    
+    --accent-1: hsla( var(--accent1-h), var(--accent1-s), var(--accent1-l), 100%);
+    --accent-1-dark: hsla( var(--accent1-h), var(--accent1-s), calc(var(--accent1-l)-10%), 100%);
+    --accent-1-darker: hsla( var(--accent1-h), var(--accent1-s), calc(var(--accent1-l)-20%), 100%);
+    --accent-1-darkest: hsla( var(--accent1-h), var(--accent1-s), calc(var(--accent1-l)-30%), 100%);
+    --accent-1-light: hsla( var(--accent1-h), var(--accent1-s), calc(var(--accent1-l)+10%), 100%);
+    --accent-1-lighter: hsla( var(--accent1-h), var(--accent1-s), calc(var(--accent1-l)+20%), 100%);
+    --accent-1-lightest: hsla( var(--accent1-h), var(--accent1-s), calc(var(--accent1-l)+30%), 100%);
+    --accent-2: hsla( var(--accent2-h), var(--accent2-s), var(--accent2-l), 200%);
+    --accent-2-dark: hsla( var(--accent2-h), var(--accent2-s), calc(var(--accent2-l)-20%), 200%);
+    --accent-2-darker: hsla( var(--accent2-h), var(--accent2-s), calc(var(--accent2-l)-20%), 200%);
+    --accent-2-darkest: hsla( var(--accent2-h), var(--accent2-s), calc(var(--accent2-l)-30%), 200%);
+    --accent-2-light: hsla( var(--accent2-h), var(--accent2-s), calc(var(--accent2-l)+20%), 200%);
+    --accent-2-lighter: hsla( var(--accent2-h), var(--accent2-s), calc(var(--accent2-l)+20%), 200%);
+    --accent-2-lightest: hsla( var(--accent2-h), var(--accent2-s), calc(var(--accent2-l)+30%), 200%);
+    --accent-3: hsla( var(--accent3-h), var(--accent3-s), var(--accent3-l), 300%);
+    --accent-3-dark: hsla( var(--accent3-h), var(--accent3-s), calc(var(--accent3-l)-30%), 300%);
+    --accent-3-darker: hsla( var(--accent3-h), var(--accent3-s), calc(var(--accent3-l)-20%), 300%);
+    --accent-3-darkest: hsla( var(--accent3-h), var(--accent3-s), calc(var(--accent3-l)-30%), 300%);
+    --accent-3-light: hsla( var(--accent3-h), var(--accent3-s), calc(var(--accent3-l)+30%), 300%);
+    --accent-3-lighter: hsla( var(--accent3-h), var(--accent3-s), calc(var(--accent3-l)+20%), 300%);
+    --accent-3-lightest: hsla( var(--accent3-h), var(--accent3-s), calc(var(--accent3-l)+30%), 300%);
+    --accent-4: hsla( var(--accent4-h), var(--accent4-s), var(--accent4-l), 400%);
+    --accent-4-dark: hsla( var(--accent4-h), var(--accent4-s), calc(var(--accent4-l)-40%), 400%);
+    --accent-4-darker: hsla( var(--accent4-h), var(--accent4-s), calc(var(--accent4-l)-20%), 400%);
+    --accent-4-darkest: hsla( var(--accent4-h), var(--accent4-s), calc(var(--accent4-l)-30%), 400%);
+    --accent-4-light: hsla( var(--accent4-h), var(--accent4-s), calc(var(--accent4-l)+40%), 400%);
+    --accent-4-lighter: hsla( var(--accent4-h), var(--accent4-s), calc(var(--accent4-l)+20%), 400%);
+    --accent-4-lightest: hsla( var(--accent4-h), var(--accent4-s), calc(var(--accent4-l)+30%), 400%);
+    
+    --neutral-1: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)+40%), 100%);
+    --neutral-2: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)+30%), 100%);
+    --neutral-3: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)+20%), 100%);
+    --neutral-4: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)+10%), 100%);
+    --neutral-5: hsla( var(--neutral-h), var(--neutral-s), var(--neutral-l), 100%);
+    --neutral-6: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)-10%), 100%);
+    --neutral-7: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)-20%), 100%);
+    --neutral-8: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)-30%), 100%);
+    --neutral-9: hsla( var(--neutral-h), var(--neutral-s), calc(var(--neutral-l)-40%), 100%);
+    
     --base: hsla( var(--base-h), var(--base-s), var(--base-l), 100%);
     --base-dark: hsla( var(--base-h), var(--base-s), calc(var(--base-l)-10%), 100%);
     --base-darker: hsla( var(--base-h), var(--base-s), calc(var(--base-l)-20%), 100%);
     --base-light: hsla( var(--base-h), var(--base-s), calc(var(--base-l)+10%), 100%);
     --base-lighter: hsla( var(--base-h), var(--base-s), calc(var(--base-l)+20%), 100%);
-        
-	/*Font sizing*/
-    --font-scale: 1.414;  /* Set the scale and all other sizes are calculated */
-	/*
+    
+    /*-----------------------------Font sizing----------------------------------------*/
+
+    /* Set the scale and all other sizes are calculated */
+    --font-scale: 1.414; 
+    /* Here are the font size scalings, if you have no other preferences these are good starting points.
+       Typically the smaller the screen size the smaller the scale.
 	1.067 - Minor Second      Smaller screens
 	1.125 - Major Second           - 
 	1.200 - Minor Third            -
@@ -76,14 +124,28 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 body {
     line-height: 1;
     font-family: 'Atkinson-Hyperlegible-Regular-102a';
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: var(--grid-columns);
+    grid-template-rows: var(--grid-rows);
+    grid-template-areas: var(--grid-area);
     min-height:100vh;
 }
 
-main {
-    flex-grow:4;
+header-component {
+    grid-area: header-component;
+
 }
+main {
+    grid-area: main;
+
+}
+nav-menu {
+    grid-area: nav-menu;
+}
+footer-component {
+    grid-area: footer-component;
+}
+
 
 
 /* Dark mode colors */
@@ -96,22 +158,57 @@ main {
 }
 
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* Extra small devices */
+@media screen and (max-width: calc(37rem - 0.01rem))) {
+	    :root {
+        --grid-columns: 100vw;
+        --grid-rows: 5rem 0rem 1fr 5rem;
+        --grid-area: 'header-component' 'nav-menu' 'main' 'footer-component';
+        --font-scale: 1.067;
+    }
+
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (max-width:767px) {
+/* Small devices */
+@media screen and (min-width: 37rem) and (max-width: calc(48rem - 0.01rem)) {
+	    :root {
+        --grid-columns: 100vw;
+        --grid-rows: 5rem 5rem 1fr 5rem;
+        --grid-area: 'header-component' 'nav-menu' 'main' 'footer-component';
+        --font-scale: 1.250;
+    }
+
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) and (max-width:991px) {
+/* Medium devices */
+@media screen and (min-width: 48rem) and (max-width: calc(85rem - 0.01rem)) {
+	    :root {
+        --grid-columns: 100vw;
+        --grid-rows: 5rem 5rem 1fr 5rem;
+        --grid-area: 'header-component' 'nav-menu' 'main' 'footer-component';
+    }
+
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) and (max-width:1199px) {
+/* Large devices */
+@media screen and (min-width: 85rem) and (max-width: calc(125rem - .01rem)) {
+	    :root {
+        --grid-columns: 1fr 4fr;
+        --grid-rows: 5rem 1fr 5rem;
+        --grid-area: 'header-component header-component'
+            'nav-menu main' 
+            'footer-component footer-component';
+    }
+
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+/* Extra large devices */
+@media screen and (min-width: 125rem) {
+	    :root {
+        --grid-columns: 1fr 1fr 4fr 1fr;
+        --grid-rows: 8rem 1fr 5rem;
+        --grid-area: '. header-component header-component .' '. nav-menu main .' '. footer-component footer-component .';
+        --font-scale: 1.5;
+    }
+
 }

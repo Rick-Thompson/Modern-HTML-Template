@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 });
 
-// web components
+/*-----------------Web Components---------------------------*/
 //nav
 fetch("Components/nav.html")
     .then(stream => stream.text())
@@ -13,11 +13,11 @@ fetch("Components/nav.html")
 fetch("Components/header.html")
     .then(stream => stream.text())
     .then(text => define(text, "header-component"));//nav
+//footer
 fetch("Components/footer.html")
     .then(stream => stream.text())
     .then(text => define(text, "footer-component"));
-
-
+/* To add more components just duplicate one of the other sections, make sure the name has a dash - in it to be valid */
 function define(html, navpart) {
     class NavComponent extends HTMLElement {
         set value(value) {
@@ -36,7 +36,7 @@ function define(html, navpart) {
     }
     customElements.define(navpart, NavComponent);
 }
-
+/* -- end web components -- */
 
 
 
